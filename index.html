@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<httpProtocol>
+		<customHeaders>
+			<add name="Access-Control-Allow-Origin" value="*" />
+			<add name="Access-Control-Allow-Headers" value="Origin, X-Requested-With, Content-Type, Accept" />
+		</customHeaders>
+	</httpProtocol>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<title>BTCN2</title>
+</head>
+
+<body>
+	<h1>Bé tập tính</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div  class="col-md-2">
+				<p>Số thứ nhất</p>
+			</div>
+			<div class="col-md-2">
+				<input type="text" id="firstNum">
+			</div>
+			<div class="col-md-1">
+				<input type="radio" name="cal" value="Cộng">
+				<label>Cộng</label>
+			</div>
+
+			<div class="col-md-1">
+				<input type="radio" name="cal" value="Trừ">
+				<label>Trừ</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<p>Số thứ hai</p>
+			</div>
+			<div class="col-md-2">
+				<input type="text" id="secondNum">
+			</div>
+			<div class="col-md-1">
+				<input type="radio" name="cal" value="Nhân">
+				<label>Nhân</label>
+			</div>
+
+			<div class="col-md-1">
+				<input type="radio" name="cal" value="Chia">
+				<label>Chia</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<p>Kết quả</p>
+			</div>
+			<div class="col-md-2">
+				<input readonly id="result">
+			</div>
+			<div class="col-md-1">
+				<button onClick="calculate()">Tính</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<p>Thông báo</p>
+			</div>
+			<div class="col-md-2">
+				<p id="noti" style="color: red"></p>
+			</div>
+		</div>
+		</div>
+	
+
+	<!-- jQuery, Popper.js, and Bootstrap JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+
+
+	
+</body>
+</html>
