@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const API_URL = "http://localhost:8000/";
+const API_URL = "https://plant-surf-whale.glitch.me/";
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
