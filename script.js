@@ -33,5 +33,7 @@ form.addEventListener("submit", (event) => {
         .then((response) => {
             var result = document.getElementById("result");
             result.value = response.kq;
+         var noti = document.getElementById("noti");
+        noti.textContent = "";
         });
 });
