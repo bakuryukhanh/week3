@@ -10,7 +10,7 @@ form.addEventListener("submit", (event) => {
 
     var noti = document.getElementById("noti");
     const data = { first: first, second, cal };
-    if ((cal == null) | (first == null) | (second == null)) {
+    if ((cal == null) | (first == "") | (second == "")) {
         noti.textContent = "Vui lòng nhập đủ các trường";
         return;
     }
