@@ -1,36 +1,37 @@
-function calculate() {
-    var first = document.getElementById("firstNum").value;
-    var second = document.getElementById("secondNum").value;
-    var cals = document.getElementsByName("cal");
+const form = document.querySelector("form");
+const API_URL = "http://localhost:8000/";
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const first = formData.get("firstNum");
+    const second = formData.get("secondNum");
+    const cal = formData.get("cal");
+
     var noti = document.getElementById("noti");
-    var kq;
-    var calValue = "";
-    for (var i = 0; i < cals.length; i++) {
-        if (cals[i].checked) calValue = cals[i].value;
-    }
-    if (isNaN(first) || first == null || first == "") {
-        noti.innerHTML = "Giá trị nhập ở <em>Số thứ nhất</em> không phải là số";
+    const data = { first: first, second, cal };
+    if ((cal == null) | (first == null) | (second == null)) {
+        noti.textContent = "Vui lòng nhập đủ các trường";
         return;
     }
-    if (isNaN(second) || second == null || second == "") {
-        noti.innerHTML = "Giá trị nhập ở <em>Số thứ hai</em> không phải là số";
+    if (isNaN(first)) {
+        noti.textContent = "Số thứ nhất không phải là số";
         return;
     }
-    if (calValue == "") {
-        noti.innerHTML = "Chưa chọn phép tính";
+    if (isNaN(second)) {
+        noti.textContent = "Số thứ hai không phải là số";
         return;
     }
-
-    var req = new XMLHttpRequest();
-    req.open("POST", "https://apple-impossible-canary.glitch.me/", true);
-    req.setRequestHeader("Content-Type", "application/json");
-    var data = { First: first, Second: second, CalValue: calValue };
-
-    req.send(JSON.stringify(data));
-    req.onloadend = () => {
-        var obj = JSON.parse(req.response);
-        kq = obj.result;
-        noti.innerHTML = "";
-        document.getElementById("result").value = kq;
-    };
-}
+    fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "content-type": "application/json",
+        },
+    })
+        .then((response) => response.json())
+        .then((response) => {
+            var result = document.getElementById("result");
+            result.value = response.kq;
+        });
+});

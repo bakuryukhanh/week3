@@ -1,86 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-	<httpProtocol>
-		<customHeaders>
-			<add name="Access-Control-Allow-Origin" value="*" />
-			<add name="Access-Control-Allow-Headers" value="Origin, X-Requested-With, Content-Type, Accept" />
-		</customHeaders>
-	</httpProtocol>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <httpProtocol>
+            <customHeaders>
+                <add name="Access-Control-Allow-Origin" value="*" />
+                <add
+                    name="Access-Control-Allow-Headers"
+                    value="Origin, X-Requested-With, Content-Type, Accept"
+                />
+            </customHeaders>
+        </httpProtocol>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<title>BTCN2</title>
-</head>
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <title>BTCN3</title>
+    </head>
 
-<body>
-	<h1>Bé tập tính</h1>
-	<div class="container-fluid">
-		<div class="row">
-			<div  class="col-md-2">
-				<p>Số thứ nhất</p>
-			</div>
-			<div class="col-md-2">
-				<input type="text" id="firstNum">
-			</div>
-			<div class="col-md-1">
-				<input type="radio" name="cal" value="Cộng">
-				<label>Cộng</label>
-			</div>
+    <body>
+        <h1>Bé tập tính</h1>
+        <form class="container-fluid">
+            <div class="row">
+                <label for="firstNum" class="col-md-2"> Số thứ nhất </label>
+                <input type="text" name="firstNum" class="col-md-2" />
+                <div class="col-md-1">
+                    <input type="radio" name="cal" value="Cộng" />
+                    <label>Cộng</label>
+                </div>
+                <div class="col-md-1">
+                    <input type="radio" name="cal" value="Trừ" />
+                    <label>Trừ</label>
+                </div>
+            </div>
+            <div class="row">
+                <label for="secondNum" class="col-md-2"> Số thứ hai </label>
 
-			<div class="col-md-1">
-				<input type="radio" name="cal" value="Trừ">
-				<label>Trừ</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<p>Số thứ hai</p>
-			</div>
-			<div class="col-md-2">
-				<input type="text" id="secondNum">
-			</div>
-			<div class="col-md-1">
-				<input type="radio" name="cal" value="Nhân">
-				<label>Nhân</label>
-			</div>
+                <input type="text" name="secondNum" class="col-md-2" />
 
-			<div class="col-md-1">
-				<input type="radio" name="cal" value="Chia">
-				<label>Chia</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<p>Kết quả</p>
-			</div>
-			<div class="col-md-2">
-				<input readonly id="result">
-			</div>
-			<div class="col-md-1">
-				<button onClick="calculate()">Tính</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<p>Thông báo</p>
-			</div>
-			<div class="col-md-2">
-				<p id="noti" style="color: red"></p>
-			</div>
-		</div>
-		</div>
-	
+                <div class="col-md-1">
+                    <input type="radio" name="cal" value="Nhân" />
+                    <label>Nhân</label>
+                </div>
 
-	<!-- jQuery, Popper.js, and Bootstrap JS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-	<script src="script.js"></script>
+                <div class="col-md-1">
+                    <input type="radio" name="cal" value="Chia" />
+                    <label>Chia</label>
+                </div>
+            </div>
+            <div class="row">
+                <label for="result" class="col-md-2"> Kết quả </label>
 
+                <input readonly id="result" class="col-md-2" />
 
-	
-</body>
+                <button id="submit" class="col-md-1">Tính</button>
+            </div>
+            <div class="row">
+                <label for="noti" class="col-md-2"> Thông báo </label>
+                <div class="col-md-2">
+                    <p id="noti" style="color: red"></p>
+                </div>
+            </div>
+        </form>
+
+        <!-- jQuery, Popper.js, and Bootstrap JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
